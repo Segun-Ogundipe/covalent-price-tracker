@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".MainActivity"
+    tools:deviceIds="wear">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/inner_frame_layout_padding"
+        app:boxedEdges="all">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center_horizontal"
+            android:textColor="#4d4d4d"
+            android:textStyle="bold"
+            android:text="@string/spot_prices_txt"/>
+
+        <EditText
+            android:id="@+id/search_field"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:textColor="#4d4d4d"
+            android:autofillHints="Tickers to search for"
+            android:hint="@string/tickers_hint" />
+
+        <LinearLayout
+            android:id="@+id/btn_cont"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/search_field"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            style="?android:attr/buttonBarStyle">
+
+            <Button
+                android:id="@+id/search_all"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:onClick="getAll"
+                android:textSize="12sp"
+                android:text="@string/get_all_txt"/>
+
+        </LinearLayout>
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            layout="@layout/powered_by" />
+
+    </RelativeLayout>
+</androidx.wear.widget.BoxInsetLayout>

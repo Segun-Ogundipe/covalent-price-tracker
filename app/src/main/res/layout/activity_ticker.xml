@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".Ticker"
+    tools:deviceIds="wear">
+
+    <ImageButton
+        android:id="@+id/back_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/back_btn_foreground"
+        android:layout_marginStart="89dp"
+        android:background="@color/light_grey"
+        android:onClick="goBack"
+        android:contentDescription="@string/back_button" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/inner_frame_layout_padding"
+        app:boxedEdges="all">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/white"
+            android:indeterminate="true"
+            android:indeterminateTint="#1a09d6"
+            android:max="100" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tickers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="24dp"/>
+
+
+        <include
+            android:id="@+id/powered"
+            layout="@layout/powered_by"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp" />
+
+    </RelativeLayout>
+</androidx.wear.widget.BoxInsetLayout>
